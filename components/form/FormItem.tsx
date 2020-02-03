@@ -169,7 +169,7 @@ function FormItem(props: FormItemProps): React.ReactElement {
         ])}
       >
         {/* Label */}
-        <FormItemLabel htmlFor={fieldId} {...props} required={isRequired} prefixCls={prefixCls} />
+        <FormItemLabel htmlFor={fieldId} required={isRequired} {...props} prefixCls={prefixCls} />
         {/* Input Group */}
         <FormItemInput
           {...props}
@@ -189,7 +189,7 @@ function FormItem(props: FormItemProps): React.ReactElement {
 
   const isRenderProps = typeof children === 'function';
 
-  if (!name && !isRenderProps && !dependencies) {
+  if (name === undefined && !isRenderProps && !dependencies) {
     return renderLayout(children as ChildrenNodeType);
   }
 
